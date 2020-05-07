@@ -1,0 +1,99 @@
+
+	$(document).ready( function() {
+		 
+	      // Rendererを用意
+	      renderer = new THREE.WebGLRenderer(
+	      {canvas: document.getElementById('mycanvas'), antialias: true} );
+	      renderer.setSize(1000, 650);
+	      // レンダラーのサイズを調整する
+	      renderer.setPixelRatio(window.devicePixelRatio);
+	      
+	      // Cameraを用意
+	      camera = new THREE.PerspectiveCamera();
+	      camera.position.z = 500;
+
+	      // Sceneを用意
+	      scene = new THREE.Scene();
+          
+	      // 三角を作る
+	      let vertices = [
+	    	  new THREE.Vector3(-30,0,0),
+	          new THREE.Vector3(0,50,0),
+	          new THREE.Vector3(30,0,0)
+	      ];
+
+	      let faces = [
+	          new THREE.Face3(0, 1, 2)
+	      ];
+
+	      let geometry = new THREE.Geometry();
+	      geometry.vertices = vertices;
+	      geometry.faces = faces;
+	      geometry.computeFaceNormals();
+	     
+	      material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
+	      mesh = new THREE.Mesh( geometry, material );
+	      //三角形をシーンについか
+	      scene.add( mesh );
+
+	      // 描画
+	      renderer.render( scene, camera );
+	      
+	      //移動値初期値
+	      $("#movex").val(camera.position.x);
+          $("#movey").val(camera.position.y);  
+          //回転初期値
+          $("#rotationx").val(mesh.rotation.x);
+          $("#rotationy").val(mesh.rotation.y);  
+          //倍率初期値
+          $("#scaling").val(mesh.scale.x);
+	    } );
+
+$(function(){
+	//移動
+	$('#move').on('click', function() {
+		let x;
+		let y;
+		
+		x = document.getElementById("movex").value;
+		y = document.getElementById("movey").value;;
+		camera.position.x = - x;        
+        camera.position.y = - y;
+        //描画
+        renderer.render(scene, camera);
+	
+	});
+	
+	//回転
+	$('#rotation').on('click', function() {
+		let x;
+		let y;
+		
+		x = document.getElementById("rotationx").value;
+		y = document.getElementById("rotationy").value;
+		
+		mesh.rotation.set(
+				 mesh.rotation.x = x,
+				 mesh.rotation.y = y,
+			     0
+			    );
+		scene.add( mesh );
+		//描画
+        renderer.render(scene, camera);
+	});
+	
+	//拡大・縮小
+	$('#scalingid').on('click', function() {
+		
+		let scal;
+		scal = document.getElementById("scaling").value;
+		mesh.scale.set(
+				 mesh.scale.x = scal,
+				 mesh.scale.y = scal,
+			     0
+			    );
+		scene.add( mesh );
+		//描画
+		renderer.render(scene, camera);
+	});
+});

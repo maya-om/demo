@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+
+
+.form-group{
+	display: flex;
+}

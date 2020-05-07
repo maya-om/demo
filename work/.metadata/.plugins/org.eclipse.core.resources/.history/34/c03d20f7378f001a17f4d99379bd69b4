@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.group{
+  display:flex;
+}
+
+.move{
+  display:flex;
+}
+
+.form-control{
+  width: 50px;	
+}
+
+.rotation{
+  padding-top: 15px;
+  padding-left: 50px;
+}
+
+.scaling{
+  padding-top: 15px;
+  padding-left: 50px;
+}

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.group{
+  display:flex;
+}
+
+.move{
+
+  display:flex;
+}
+
+.form-control{
+  width: 80px;	
+}
+
+.rotation{
+  padding-top: 15px;
+  padding-left: 50px;
+}
+
+.scaling{
+  padding-top: 15px;
+  padding-left: 50px;
+}
+
+.btn{
+	height: 30px;
+    width: 150px;
+    margin-top: 40px;
+}

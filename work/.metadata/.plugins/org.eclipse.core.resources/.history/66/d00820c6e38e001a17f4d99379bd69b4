@@ -1,0 +1,9 @@
+
+  
+.mycanvas{
+  width: 100%;
+};
+
+.form-group{
+	display: flex;
+};

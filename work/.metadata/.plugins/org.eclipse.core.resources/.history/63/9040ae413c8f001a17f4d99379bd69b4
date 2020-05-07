@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/js/three.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+ <div class="group">
+     <canvas id="mycanvas" class="mycanvas" style="border:solid 1px;">
+                  このブラウザは現在使われておりません。もう1度、Canvasに対応したブラウザで表示ください。
+     </canvas>
+     
+     <div class="form-group">
+      
+       <div class="move">
+           <div class="col-sm-3">
+             <label class="control-label">移動X</label>
+             <input id="movex" class="form-control" type="text">
+           </div>
+       
+          <div class="col-sm-3">
+            <label class="control-label">移動Y</label>
+            <input id="movey" class="form-control" type="text">
+           </div>
+           <button type="button" class="btn btn-primary btn-sm">移動</button>
+       </div>
+       
+       
+       <div class="rotation">
+           <div class="col-sm-3">
+             <label class="control-label">回転X</label>
+             <input id="rotationx" class="form-control" type="text">
+           </div>
+       
+          <div class="col-sm-3">
+            <label class="control-label">回転Y</label>
+            <input id="rotationy" class="form-control" type="text">
+           </div>
+           <button type="button" class="btn btn-primary btn-sm">回転</button>
+       </div>
+       
+       <div class="scaling">
+           <div class="col-sm-3">
+             <label class="control-label scalinglabel">拡大・縮小</label>
+             <input id="scaling" class="form-control" type="text">
+           </div>
+       
+       </div>
+    </div>
+    
+</div> 
+
+              
+</body>
+</html>

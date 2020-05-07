@@ -1,0 +1,91 @@
+
+	$(document).ready( function() {
+		 
+	      // Rendererを用意
+	      renderer = new THREE.WebGLRenderer(
+	      {canvas: document.getElementById('mycanvas'), antialias: true} );
+	      renderer.setSize(1000, 650);
+	      // レンダラーのサイズを調整する
+	      renderer.setPixelRatio(window.devicePixelRatio);
+	      
+	      // Cameraを用意
+	      camera = new THREE.PerspectiveCamera();
+	      camera.position.z = 500;
+
+	      // Sceneを用意
+	      scene = new THREE.Scene();
+          
+	      // 三角を作る
+	      let vertices = [
+	    	  new THREE.Vector3(-50,0,0),
+	          new THREE.Vector3(0,50,50),
+	          new THREE.Vector3(50,0,0)
+	      ];
+
+	      let faces = [
+	          new THREE.Face3(0, 1, 2)
+	      ];
+
+	      let geometry = new THREE.Geometry();
+	      geometry.vertices = vertices;
+	      geometry.faces = faces;
+	      geometry.computeFaceNormals();
+	     
+	      material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
+	      mesh = new THREE.Mesh( geometry, material );
+	      scene.add( mesh );
+
+	      // 描画
+	      renderer.render( scene, camera );
+	      
+	      //移動値初期値
+	      $("#movex").val(camera.position.x);
+          $("#movey").val(camera.position.y);  
+          //回転
+          $("#rotationx").val(mesh.rotation.x);
+          $("#rotationy").val(mesh.rotation.y);  
+          
+          
+	    } );
+
+$(function(){
+	$('#move').on('click', function() {
+		let x;
+		let y;
+		
+		x = document.getElementById("movex").value;
+		y = document.getElementById("movey").value;;
+		camera.position.x = - x;        
+        camera.position.y = - y;        
+        renderer.render(scene, camera);
+	
+	});
+	
+	$('#rotation').on('click', function() {
+		let x;
+		let y;
+		
+		x = document.getElementById("rotationx").value;
+		y = document.getElementById("rotationy").value;
+		
+		mesh.rotation.set(
+				 mesh.rotation.x = x,
+				 mesh.rotation.y = y,
+			     0
+			    );
+		scene.add( mesh );
+        renderer.render(scene, camera);
+		console.log("kookok")
+	});
+	
+	$('#scaling').on('click', function() {
+		mesh.scale.set(
+				 mesh.scale.x = 100,
+				 0,
+			     0
+			    );
+		scene.add( mesh );
+		renderer.render(scene, camera);
+		 console.log("kookok")
+	});
+});

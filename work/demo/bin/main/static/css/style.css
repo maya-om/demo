@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.group{
+  display:flex;
+}
+
+.move{
+
+  display:flex;
+}
+
+.rotation{
+  padding-top: 15px;
+  display:flex;
+}
+
+.scaling{
+  padding-top: 15px;
+  display:flex;
+}
+
+.btn{
+	margin-left: 20px;
+    height: 30px;
+    margin-top: 40px;
+}
+
+.scalinglabel{
+	width:80px;
+}

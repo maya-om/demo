@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.group{
+  display:flex;
+}
+
+.move{
+　　　display: flex;
+}
+
+.form-control{
+  width: 50px;	
+}

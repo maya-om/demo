@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.group{
+  display:flex;
+}
+
+.form-group{
+   padding-left: 50px;
+   display:flex;
+}
+
+.move{
+　　　display:flex;
+}

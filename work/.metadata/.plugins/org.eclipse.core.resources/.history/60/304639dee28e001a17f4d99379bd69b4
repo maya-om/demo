@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    overflow: hidden;
+  }
+  
+.mycanvas{
+  width: 100%;
+}
+
+.form-group{
+	display: flex;
+}
